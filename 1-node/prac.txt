@@ -1,0 +1,9 @@
+使用path，fs，http创建一个server，记录用户访问的路径和时间
+
+比如用户访问 /home, 我们就记录这个路径和访问的时间
+
+如果用户访问/logs
+我们就返回记录的所有log，以JSON的形式
+[{"time":"xxxx","path":"/home"}]
+
+需要确保server重启，记录仍然存在。

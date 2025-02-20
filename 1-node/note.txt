@@ -1,0 +1,89 @@
+Mason
+
+Bun
+Deno
+
+Asynchronous
+Synchronous
+
+Non-blocking
+blocking
+
+single-threaded
+
+event loop
+
+
+heavy computing
+
+
+hello -> 0/ 1000 / 1000
+foo -> 1000 / 1100 / 1001
+
+function foo() {
+  console.log("foo");
+}
+// need 1 sec to run
+function runFor1Sec() {
+}
+setTimeout(foo, 100);
+runFor1Sec();
+console.log('hello');
+
+0ms
+call stack: []
+web api: []
+callback queue: []
+
+1ms -
+call stack: [setTimeout]
+web api: []
+callback queue: []
+
+2ms
+call stack: []
+web api: [100ms timer]
+callback queue: []
+
+3ms
+call stack: [runFor1Sec]
+web api: [100ms timer]
+callback queue: []
+
+103ms
+call stack: [runFor1Sec]
+web api: []
+callback queue: [100ms timer]
+
+1003ms
+call stack: [console.log('hello')]
+web api: []
+callback queue: [100ms timer]
+
+1004ms
+call stack: [100ms timer]
+web api: []
+callback queue: []
+
+1005ms
+call stack: [console.log('foo')]
+web api: []
+callback queue: []
+
+
+1003 hello
+1005 foo
+
+
+macro task queue (callback) queue: timer, requestAnimationFrame, i/o
+micro task queue : promise , MutationObserver, queueMicrotask
+
+node.js -> nextTick -> micro task queue -> higher priority than promise
+        -> no MutationObserver
+macro task -> setImmediate
+
+micro 先执行
+
+cs []
+macro [c1,c2,c3]
+micro []
