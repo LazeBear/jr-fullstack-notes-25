@@ -1,0 +1,42 @@
+ package
+ 库
+ 包
+
+ library
+ framework
+
+
+yarn
+pnpm
+
+npm init -y
+npm i {package_name}
+npm i {package_name}@{version}
+
+npm i -D {package_name}
+npm i --save-dev {package_name}
+
+npm i
+
+npm uninstall {package_name}
+
+npm run {script_name}
+npm run dev
+
+
+npx
+
+1.0.0-beta.3
+
+tag
+
+create-react-app
+vite
+
+
+cli - command line interface
+脚手架
+boilerplate
+
+
+fastify
