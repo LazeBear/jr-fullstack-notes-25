@@ -1,0 +1,104 @@
+UDP
+user datagram protocol
+
+tcp 三次握手和四次挥手
+OSI Model
+
+http
+0.9
+1.0
+1.1 persistent connection 持久连接
+2 多路复用 multiplexing
+3 基于UDP
+
+secure layer - Let's encrypt
+http -> https
+
+cross-origin-access-control
+
+query paramater = value & query param2 = value
+
+metadata
+
+authentication
+Authentication
+
+MDN
+增删改查
+
+crud api
+crud server
+
+X-custom
+
+proxy server
+load balancer
+
+序列化与反序列化
+serialization and de-serialzation
+
+xml
+
+
+stateful
+
+
+GET /users/:userId
+
+{
+  "name":"xxx",
+  "email":"xxx",
+  "orders": "/users/:userId/orders"
+}
+
+GET /users/:userId/orders
+
+
+Restful 设计规范
+1. versioning 给api加版本号
+
+/users
+/v1/users
+/v2/users
+v1.example.com/users
+
+v1 : {
+  "name":"xxx",
+  "email":"xxx"
+  }
+v2: {
+  "name":"xxx",
+  "domain":"xx"
+}
+
+2. use noun 用名词来描述资源（并且使用复数形式）
+user product order
+/users /products /orders
+/users/123
+
+3. 用http的方法来表示操作的目的
+GET -> 获取 -》 read  （数据库）
+POST -> 添加 -》 create （write）
+
+4. 可以使用嵌套路径来定位资源
+/users/123/orders
+
+5. 用合适的状态码来表示请求的结果
+200 -> ok
+201 -> created successfully
+
+6. 返回可读的错误信息
+{
+  “error”:"Invalid email"
+}
+{
+  "error":"error10001"
+}
+
+7. 返回数据的时候，注意返回的大小 （分页）
+page, pageSize = 100
+
+sequence diagram
+时序图
+
+
