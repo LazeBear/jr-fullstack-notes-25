@@ -1,0 +1,70 @@
+Router
+
+app.use('/users', userRouter);
+app.use('/movies', movieRouter);
+
+
+
+folder structure
+
+/--root level ---/
+-- node_modules/
+-- package.json
+-- package-lock.json
+-- src/
+  |-- index.js 入口文件 (app.js , server.js)
+  |-- routes/
+    |-- movie.router.js (movieRouter.js, movie-router.js, movies.router.js)
+    |-- user.router.js
+  |-- controllers/ (validation, business logic)
+    |-- movie.controller.js
+    |-- user.controller.js
+  |-- models/ (DB CRUD operation)
+    |-- user.model.js
+  |-- middleware
+    |-- error/
+      |-- error.middleware.js
+    |-- cors.middleware.js
+    |-- authGuard.middleware.js
+  |-- config/
+  |-- utils/ (utility function, helper function)
+    |-- db.js (db connection)
+    |-- config.js
+
+
+小
+合并routes和controllers -> controllers
+大
+controllers -> controllers + services (business logic)
+
+
+
+
+Nest.js (module)
+/--root level ---/
+-- node_modules/
+-- package.json
+-- package-lock.json
+-- src/
+  |-- index.js 入口文件 (app.js , server.js)
+  |-- users/
+    |-- user.middleware.js
+    |-- middleware/
+    |-- user.router.js
+    |-- user.controller.js
+    |-- user.model.js
+  |-- movies/
+    |-- movie.router.js (movieRouter.js, movie-router.js, movies.router.js)
+    |-- movie.controller.js
+  |-- middleware
+    |-- error/
+      |-- error.middleware.js
+    |-- cors.middleware.js
+    |-- authGuard.middleware.js
+  |-- config/
+  |-- utils/ (utility function, helper function)
+    |-- db.js (db connection)
+    |-- config.js
+
+
+MVC pattern (model view controller)
