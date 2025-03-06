@@ -3,15 +3,25 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
-    "debug": "node --inspect index.js"
+    "start": "cross-env NODE_ENV=production node src/index.js",
+    "dev": "cross-env NODE_ENV=development nodemon src/index.js",
+    "debug": "node --inspect src/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^4.21.2"
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "morgan": "^1.10.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "winston": "^3.17.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"

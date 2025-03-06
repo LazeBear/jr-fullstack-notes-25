@@ -68,3 +68,18 @@ Nest.js (module)
 
 
 MVC pattern (model view controller)
+
+
+kibana
+elastic search
+
+sentry
+
+datadog
+grafana
+
+SLO
+SLA
+
+99.99
+99.95
