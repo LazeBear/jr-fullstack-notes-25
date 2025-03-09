@@ -1,0 +1,165 @@
+SQL DB
+关系型数据库
+
+MySQL
+PostgreSQL
+SQLite
+
+NO-SQL DB
+非关系型
+
+MongoDB Document-oriented
+Redis Key-Value
+Neo4J Graph-oriented
+Cassandra Column Family
+
+
+query
+
+BSON Binary JSON
+
+Collection
+
+_id
+
+
+字段 field
+object -> property
+
+
+DB Server （数据库服务器）
+Database (数据库)
+Collection （集合）（sql 表）
+      users -》 user
+Document （文档）
+      {
+        "_id": ObjectId("123"),
+        "name":"Mason"
+      }
+
+field
+
+Sever - Client model
+app server, mongo shell, mongodb compass
+
+
+Primary Key
+MongoDB - index (unique index)
+
+
+(current db -> school)
+(students -> colletion name)
+(insertOne -> action)
+
+Create
+db.students.insertOne
+db.students.insertMany
+
+
+Read
+db.students.findOne()
+db.students.find()
+  - projection
+  - countDocuments
+  - sort
+
+Update
+db.students.updateOne()
+db.students.updateMany()
+
+Delete
+db.students.deleteOne()
+db.students.deleteMany()
+
+
+regex
+query operator
+$regex
+
+update operator
+
+
+1:1
+A:B
+B:A
+
+1:M     1:1
+A:B     B:A
+
+
+1:M     1:M  -> M:N
+A:B     B:A
+
+
+entity
+collection
+
+students
+[
+  {
+    _id:1,
+    name:"mason",
+    courses:[
+      {
+        _id: 3,
+        courseName:"Intro to JS",
+      },
+      {
+        _id: 4,
+        courseName:"Machine learning",
+      }
+    ]
+  },
+  {
+    _id:2,
+    name:"james",
+    courses:[
+      {
+        _id: 3,
+        courseName:"Intro to JS",
+      },
+      {
+        _id: 4,
+        courseName:"Machine learning",
+      }
+    ]
+  },
+]
+
+courses
+[
+  {
+    _id: 3,
+    courseName:"Intro to JS",
+    term:
+    year:
+    xxxx
+  },
+  {
+    _id: 4,
+    courseName:"Machine learning",
+  }
+]
+
+sensors
+document > 16MB
+logs
+
+
+范式和非范式
+
+100ms
+200ms
+
+事务
+
+revert
+
+replica set
+
+主从数据库
+primary
+secondary
+
+
+聚合

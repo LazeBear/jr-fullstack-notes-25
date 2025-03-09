@@ -1,0 +1,28 @@
+1. Create a new database called "school"
+
+2. Insert a new document into the "students" collection with the following fields:
+ name: John Doe
+ assignmentResults: [25, 25]
+ finalGpa: 7
+
+3. Insert the following data to the "students" collection:
+[{"name":"student 1","assignmentResults":[9,21],"finalGpa":2},{"name":"student 2","assignmentResults":[16,6],"finalGpa":3},{"name":"student 3","assignmentResults":[4,22],"finalGpa":4},{"name":"student 4","assignmentResults":[0,25],"finalGpa":1},{"name":"student 5","assignmentResults":[16,12],"finalGpa":3},{"name":"student 6","assignmentResults":[3,14],"finalGpa":7},{"name":"student 7","assignmentResults":[8,6],"finalGpa":5},{"name":"student 8","assignmentResults":[23,24],"finalGpa":7},{"name":"student 9","assignmentResults":[1,6],"finalGpa":6},{"name":"student 10","assignmentResults":[25,5],"finalGpa":7}]
+
+4. Insert the following data to the "students" collection:
+   updatedAt: Date
+
+5. Find students who has a gpa less than 5 but at least one assignment result is
+greater than 20
+
+db.students.find({finalGpa: {$lt:5}, assignmentResults: {$gt:20}})
+
+6. Delete students who has a gpa less than 5 or one of the assignment result is
+less than 20
+
+db.students.deleteMany({$or: [{finalGpa:{$lt:5}}, {assignmentResults: {$lt: 20}}]})
+
+7. Find how many students left
+
+
+
+$elemMatch

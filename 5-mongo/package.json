@@ -1,0 +1,16 @@
+{
+  "name": "5-mongo",
+  "version": "1.0.0",
+  "main": "seed.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@faker-js/faker": "^9.6.0",
+    "mongodb": "^6.14.2"
+  }
+}
