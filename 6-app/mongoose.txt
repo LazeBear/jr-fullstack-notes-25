@@ -1,0 +1,8 @@
+const document = new Model({});
+
+const document = Model.findOne();
+
+document.name = 'xxx';
+
+
+await document.save();
