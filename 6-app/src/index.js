@@ -7,6 +7,7 @@ const rateLimit = require('./middleware/rateLimit.middleware');
 const { logger } = require('./utils/logger');
 const v1Router = require('./routes');
 const connectToDb = require('./utils/db');
+const errorMiddleware = require('./middleware/error');
 
 const app = express();
 
@@ -17,6 +18,8 @@ app.use(rateLimit);
 app.use(express.json());
 
 app.use('/v1', v1Router);
+
+errorMiddleware.forEach((handler) => app.use(handler));
 
 connectToDb();
 

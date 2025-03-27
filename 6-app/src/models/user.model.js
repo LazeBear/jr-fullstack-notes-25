@@ -6,10 +6,20 @@ const schema = new Schema({
     type: String,
     required: true,
     unique: true, // mongoose create unique index
+    minLength: 2,
+    maxLength: 20,
+    validate: {
+      validator: (username) => {
+        // validation logic
+        return /^[a-zA-Z0-9]+$/.test(username);
+      },
+      message: (props) => `${props.value} is not a valid username`,
+    },
   },
   password: {
     type: String,
     required: true,
+    minLength: 6,
   },
 });
 

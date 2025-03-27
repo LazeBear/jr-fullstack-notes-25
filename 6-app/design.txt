@@ -1,0 +1,43 @@
+ERD Entity relational diagram
+
+User: {
+  username
+  password
+}
+
+Post: {
+  title,
+  content,
+  likes, (number)
+  comments, (number)
+  hashtags, ([ObjectId])
+  user,
+  createdAt,
+  updatedAt
+  (isDeleted,
+  deletedAt)
+}
+
+Comment: {
+  user,
+  content,
+  post,
+  thread,
+  likes,
+  createdAt,
+  updatedAt
+}
+
+Hashtag: {
+  name,
+  description,
+  createdAt,
+  posts?
+}
+
+Like: {
+  user
+  post
+  comment
+  createdAt
+}
