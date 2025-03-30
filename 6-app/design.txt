@@ -22,7 +22,6 @@ Comment: {
   user,
   content,
   post,
-  thread,
   likes,
   createdAt,
   updatedAt
@@ -30,14 +29,18 @@ Comment: {
 
 Hashtag: {
   name,
-  description,
+  (description,)
   createdAt,
-  posts?
+  postsCount (number)
+  recentPosts
 }
 
 Like: {
   user
+  targetType (post, comment - enum)
+  targetId
   post
-  comment
   createdAt
 }
+
+indexing

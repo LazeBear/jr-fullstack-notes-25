@@ -7,10 +7,14 @@ const {
 } = require('../controllers/test.controller');
 const authGuardMiddleware = require('../middleware/authGuard.middleware');
 const roleGuardMiddleware = require('../middleware/roleGuard.middleware');
+const postRouter = require('./post.route');
+const commentRouter = require('./comment.route');
 
 const v1Router = Router();
 
 v1Router.use('/auth', authRouter);
+v1Router.use('/posts', authGuardMiddleware, postRouter);
+v1Router.use('/comments', commentRouter);
 
 v1Router.get('/public', public);
 v1Router.get('/private', authGuardMiddleware, private);
