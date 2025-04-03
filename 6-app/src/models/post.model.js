@@ -23,6 +23,16 @@ const postSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
+    likesCount: {
+      type: Number,
+      default: 0,
+    },
+    hashtags: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Hashtag',
+      },
+    ],
   },
   {
     timestamps: true,

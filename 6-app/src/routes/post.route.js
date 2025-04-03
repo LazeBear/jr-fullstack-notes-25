@@ -5,6 +5,7 @@ const {
   updatePostById,
   deletePostById,
   createPost,
+  getUserPostLikes,
 } = require('../controllers/post.controller');
 const postValidateSchema = require('../validations/post.validation');
 const {
@@ -25,5 +26,6 @@ postRouter.put(
 );
 postRouter.delete('/:id', validateObjectId('id'), deletePostById);
 postRouter.post('/', validateBody(postValidateSchema.create), createPost);
+postRouter.get('/:id/likes', validateObjectId('id'), getUserPostLikes);
 
 module.exports = postRouter;
